@@ -22,7 +22,7 @@
 <header class="site-header">
   <div class="nav">
     <a href="#" class="brand">
-      <span class="brand-mark">CC</span>
+      <img src="../CipherCore_Exact_Logo.png" alt="CipherCore Security logo" class="brand-logo">
       <span>CipherCore Security</span>
     </a>
 
@@ -54,18 +54,7 @@
     </div>
 
     <div class="hero-visual">
-      <svg viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <defs>
-          <linearGradient id="shieldGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#2563eb"/>
-            <stop offset="100%" stop-color="#1d4ed8"/>
-          </linearGradient>
-        </defs>
-        <path d="M100 12 L184 46 V108 C184 156 148 196 100 210 C52 196 16 156 16 108 V46 Z" fill="url(#shieldGrad)" opacity="0.12" stroke="url(#shieldGrad)" stroke-width="2"/>
-        <rect x="72" y="106" width="56" height="46" rx="6" fill="url(#shieldGrad)"/>
-        <path d="M82 106V86C82 75 90 66 100 66C110 66 118 75 118 86V104" stroke="url(#shieldGrad)" stroke-width="7" fill="none" stroke-linecap="round"/>
-        <circle cx="100" cy="128" r="6" fill="#fff"/>
-      </svg>
+      <img src="../CipherCore_Exact_Logo.png" alt="CipherCore Security" class="hero-logo">
     </div>
   </div>
 </section>
@@ -232,6 +221,7 @@
     </div>
   </div>
 </section>
+
 <!-- ============ CTA BANNER ============ -->
 <section class="cta-banner">
   <div class="wrap">
@@ -420,10 +410,8 @@
 </footer>
 
 <script>
-  // Footer year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Mobile nav toggle
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.nav');
   if (toggle && nav) {
