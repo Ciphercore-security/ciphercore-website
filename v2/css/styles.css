@@ -867,3 +867,39 @@ button[type="submit"]:hover {
   .hero-visual { padding: 28px; }
   .card { padding: 24px 22px; }
 }
+/* ========== LOGO SIZING (FIX) ========== */
+.brand-logo {
+  height: 36px !important;
+  width: auto !important;
+  max-height: 36px !important;
+  max-width: 200px !important;
+  display: inline-block !important;
+  vertical-align: middle;
+}
+
+.hero-logo {
+  max-width: 280px !important;
+  max-height: 280px !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 auto;
+}
+
+.hero-visual img {
+  max-width: 280px;
+  max-height: 280px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Fallback: any image inside the page that isn't sized */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Favicon won't be affected by these */
