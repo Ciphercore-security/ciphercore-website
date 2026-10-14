@@ -1168,3 +1168,21 @@ footer {
   }
   .reveal-ready { opacity: 1; transform: none; transition: none; }
 }
+/* ========== LOGO ========== */
+.brand-logo {
+  height: 36px;
+  width: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+.hero-logo {
+  max-width: 70%;
+  max-height: 70%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 12px 30px rgba(37, 99, 235, 0.15));
+}
