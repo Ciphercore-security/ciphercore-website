@@ -704,3 +704,16 @@ button[type="submit"]:hover {
   * { animation: none !important; transition: none !important; }
   .hero-canvas { display: none; }
 }
+/* ========== TEAM PHOTOS ========== */
+.team-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  margin-bottom: 18px;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.20);
+  border: 2px solid #fff;
+  background: #f7f8fa;
+}
