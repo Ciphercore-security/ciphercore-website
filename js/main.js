@@ -124,3 +124,86 @@
   console.log('%c👀 poking around the console?', 'color:#4EC3F0; font-size:14px; font-weight:bold;');
   console.log('%cWe like your style. If you can find a real gap, tell us: hello@ciphercoresecurity.co.za', 'color:#93A3C4; font-size:12px;');
 })();
+/* =========================================================
+   HERO — BINARY RAIN CANVAS
+   ========================================================= */
+(function () {
+  const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) return;
+
+  const ctx = canvas.getContext('2d');
+  let width, height, columns, drops;
+  const fontSize = 16;
+  const chars = '01'.split('');
+
+  function resize() {
+    const parent = canvas.parentElement;
+    width = parent.offsetWidth;
+    height = parent.offsetHeight;
+    canvas.width = width * window.devicePixelRatio;
+    canvas.height = height * window.devicePixelRatio;
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx.setTransform(window.devicePixelRatio, 0, 0, window.devicePixelRatio, 0, 0);
+    columns = Math.floor(width / fontSize);
+    drops = new Array(columns).fill(0).map(() => Math.random() * -height);
+  }
+
+  function draw() {
+    ctx.fillStyle = 'rgba(10, 18, 38, 0.10)';
+    ctx.fillRect(0, 0, width, height);
+
+    ctx.fillStyle = '#2563eb';
+    ctx.font = fontSize + 'px ui-monospace, monospace';
+
+    for (let i = 0; i < drops.length; i++) {
+      const char = chars[Math.floor(Math.random() * chars.length)];
+      const x = i * fontSize;
+      const y = drops[i];
+
+      ctx.fillText(char, x, y);
+
+      if (y > height && Math.random() > 0.975) {
+        drops[i] = 0;
+      } else {
+        drops[i] += fontSize * 0.5;
+      }
+    }
+  }
+
+  let rafId = null;
+  function loop() {
+    draw();
+    rafId = requestAnimationFrame(loop);
+  }
+
+  function start() {
+    if (rafId) return;
+    loop();
+  }
+
+  function stop() {
+    if (rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
+
+  // Resize handling
+  window.addEventListener('resize', () => {
+    resize();
+  });
+
+  // Pause when tab not visible (saves battery)
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop();
+    else start();
+  });
+
+  // Init
+  resize();
+  start();
+})();
