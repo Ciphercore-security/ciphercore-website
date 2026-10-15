@@ -225,9 +225,10 @@ p { color: var(--ink-2); }
 }
 
 .hero-logo {
-  max-width: 280px;
-  max-height: 280px;
-  width: auto;
+  max-width: 380px;
+  max-height: 380px;
+  min-width: 220px;
+  width: 80%;
   height: auto;
   object-fit: contain;
   display: block;
