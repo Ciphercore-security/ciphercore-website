@@ -22,6 +22,7 @@
   --navy-2: #0d1830;
   --navy-3: #152244;
   --cyan: #4EC3F0;
+  --cyan-bright: #6ddcff;
   --radius: 10px;
   --radius-sm: 6px;
   --max: 1120px;
@@ -52,8 +53,8 @@ a { color: inherit; text-decoration: none; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(10, 18, 38, 0.85);
-  backdrop-filter: blur(10px);
+  background: rgba(10, 18, 38, 0.88);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(78, 195, 240, 0.12);
 }
 
@@ -141,14 +142,11 @@ a { color: inherit; text-decoration: none; }
 .btn-primary:hover {
   background: var(--brand-dark);
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
 }
 
 .btn-secondary { background: transparent; color: #fff; border-color: rgba(78, 195, 240, 0.3); }
 .btn-secondary:hover { border-color: var(--cyan); color: var(--cyan); }
-
-.btn-secondary-light { background: #fff; color: var(--ink); border-color: var(--line); }
-.btn-secondary-light:hover { border-color: var(--ink); }
 
 /* ========== SECTIONS ========== */
 section { padding: 88px 0; position: relative; }
@@ -177,13 +175,10 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 .section-head p { color: var(--muted); font-size: 17px; }
 p { color: var(--ink-2); }
 
-/* ========== HERO (dark navy) ========== */
+/* ========== HERO — SOLID DARK NAVY ========== */
 .hero {
   padding: 110px 0 96px;
-  background:
-    radial-gradient(circle at 20% 30%, rgba(78, 195, 240, 0.08), transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(37, 99, 235, 0.12), transparent 55%),
-    linear-gradient(180deg, #0a1226 0%, #0d1830 100%);
+  background: #0a1226;
   position: relative;
   overflow: hidden;
   color: #fff;
@@ -195,7 +190,7 @@ p { color: var(--ink-2); }
   width: 100%;
   height: 100%;
   z-index: 0;
-  opacity: 0.35;
+  opacity: 0.55;
   pointer-events: none;
 }
 
@@ -213,15 +208,15 @@ p { color: var(--ink-2); }
 }
 
 .hero h1 {
-  color: #fff;
+  color: #ffffff;
   max-width: 16ch;
   margin-bottom: 24px;
-  text-shadow: 0 0 40px rgba(78, 195, 240, 0.15);
+  text-shadow: 0 0 40px rgba(78, 195, 240, 0.35);
 }
 
 .hero .lede {
   font-size: 18px;
-  color: #94a3b8;
+  color: #b0c0dd;
   max-width: 52ch;
   margin-bottom: 32px;
   line-height: 1.7;
@@ -231,8 +226,8 @@ p { color: var(--ink-2); }
 
 /* Terminal */
 .terminal {
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(78, 195, 240, 0.25);
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(78, 195, 240, 0.3);
   border-radius: 10px;
   overflow: hidden;
   font-family: 'JetBrains Mono', monospace;
@@ -240,7 +235,7 @@ p { color: var(--ink-2); }
   max-width: 500px;
   box-shadow:
     0 12px 32px rgba(0, 0, 0, 0.4),
-    0 0 40px rgba(78, 195, 240, 0.08);
+    0 0 40px rgba(78, 195, 240, 0.12);
   backdrop-filter: blur(10px);
 }
 
@@ -250,7 +245,7 @@ p { color: var(--ink-2); }
   gap: 6px;
   padding: 10px 14px;
   border-bottom: 1px solid rgba(78, 195, 240, 0.15);
-  background: rgba(10, 18, 38, 0.7);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .terminal-bar span {
@@ -312,8 +307,8 @@ p { color: var(--ink-2); }
   display: block;
   margin: 0 auto;
   border-radius: 16px;
-  filter: drop-shadow(0 20px 60px rgba(78, 195, 240, 0.25));
-  border: 1px solid rgba(78, 195, 240, 0.15);
+  filter: drop-shadow(0 20px 60px rgba(78, 195, 240, 0.35));
+  border: 1px solid rgba(78, 195, 240, 0.18);
 }
 
 /* ========== TRUST STRIP ========== */
@@ -511,11 +506,10 @@ p { color: var(--ink-2); }
 
 /* ========== CTA BANNER ========== */
 .cta-banner {
-  background:
-    radial-gradient(circle at 30% 50%, rgba(78, 195, 240, 0.1), transparent 60%),
-    var(--navy);
+  background: var(--navy);
   color: #fff;
   padding: 72px 0;
+  border-top: 1px solid #1e2b45;
 }
 
 .cta-banner .wrap {
@@ -816,7 +810,7 @@ button[type="submit"]:hover {
 @media (max-width: 600px) {
   section { padding: 64px 0; }
   .hero { padding: 72px 0 64px; }
-  .hero-canvas { opacity: 0.25; }
+  .hero-canvas { opacity: 0.35; }
   .card { padding: 24px 22px; }
   .stat-item .stat-num { font-size: 2rem; }
 }
