@@ -142,4 +142,16 @@
             if (p < 1) requestAnimationFrame(tick);
             else el.textContent = target.toLocaleString() + suffix;
           }
-          request
+          requestAnimationFrame(tick);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    statNums.forEach(el => observer.observe(el));
+  }
+
+  // ---------- Console easter egg ----------
+  console.log('%c🔒 CipherCore Security', 'color:#2563eb; font-size:14px; font-weight:bold;');
+  console.log('%cCyber awareness training — making security make sense. info@ciphercoresecurity.co.za', 'color:#64748b; font-size:12px;');
+})();
