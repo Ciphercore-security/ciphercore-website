@@ -6,7 +6,7 @@
 <title>CipherCore Security — Cyber Awareness Training</title>
 <link rel="icon" type="image/jpeg" href="../logo.jpg.jpeg">
 <meta name="theme-color" content="#2563eb">
-<meta name="description" content="CipherCore Security delivers interactive cybersecurity awareness training — phishing simulations, workshops and refreshers for small teams.">
+<meta name="description" content="Interactive cybersecurity awareness training for small teams. Phishing simulations, workshops, and refreshers — built for how real people work.">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="CipherCore Security — Cyber Awareness Training">
@@ -15,7 +15,7 @@
 <meta property="og:image" content="https://ciphercoresecurity.co.za/logo.jpg.jpeg">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="stylesheet" href="css/main.css?v=400">
+<link rel="stylesheet" href="css/main.css?v=500">
 </head>
 <body>
 
@@ -42,14 +42,53 @@
 <!-- ============ HERO ============ -->
 <section class="hero">
   <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+  <svg class="hero-circuit" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="traceGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#2563eb" stop-opacity="0.6"/>
+        <stop offset="100%" stop-color="#4EC3F0" stop-opacity="0.15"/>
+      </linearGradient>
+    </defs>
+    <g stroke="url(#traceGrad)" stroke-width="1.2" fill="none">
+      <path d="M0 120 L240 120 L280 160 L520 160"/>
+      <path d="M520 160 L560 120 L1200 120"/>
+      <path d="M0 480 L320 480 L360 440 L720 440"/>
+      <path d="M720 440 L760 480 L1200 480"/>
+      <path d="M100 0 L100 220 L140 260 L140 600"/>
+      <path d="M1100 0 L1100 220 L1060 260 L1060 600"/>
+      <path d="M400 600 L400 400 L440 360 L440 0"/>
+      <path d="M800 600 L800 400 L760 360 L760 0"/>
+    </g>
+    <g fill="#2563eb">
+      <circle cx="240" cy="120" r="3"/>
+      <circle cx="520" cy="160" r="3"/>
+      <circle cx="560" cy="120" r="3"/>
+      <circle cx="320" cy="480" r="3"/>
+      <circle cx="720" cy="440" r="3"/>
+      <circle cx="140" cy="260" r="3"/>
+      <circle cx="1060" cy="260" r="3"/>
+      <circle cx="440" cy="360" r="3"/>
+      <circle cx="760" cy="360" r="3"/>
+    </g>
+  </svg>
+
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow" style="display:block; font-size:13px; font-weight:600; color:var(--brand); margin-bottom:14px;">Cyber awareness training</span>
+      <span class="eyebrow">// Cyber awareness training</span>
       <h1>Your staff are your first line of defence.</h1>
       <p class="lede">CipherCore Security delivers practical, interactive cybersecurity awareness training for small teams. Phishing simulations, workshops, and refreshers — built around how your people actually work.</p>
       <div class="hero-ctas">
         <a href="#services" class="btn btn-primary">Our training</a>
         <a href="#contact" class="btn btn-secondary">Book a session</a>
+      </div>
+
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span></span><span></span><span></span>
+          <span class="terminal-title">ciphercore@security — bash</span>
+        </div>
+        <div class="terminal-body"></div>
       </div>
     </div>
 
@@ -65,8 +104,32 @@
     <div class="trust-items">
       <span>Interactive, not PowerPoint</span>
       <span>Plain language, no jargon</span>
-      <span>Built for small teams</span>
+      <span>MWR CyberSec Certified</span>
       <span>Based in Pretoria</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats-section">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num" data-target="91" data-suffix="%">0%</span>
+        <span class="stat-label">of breaches start with a phishing email <small>industry statistic</small></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="74" data-suffix="%">0%</span>
+        <span class="stat-label">of breaches involve a human element <small>industry statistic</small></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="60" data-suffix=" min">0 min</span>
+        <span class="stat-label">typical session length <small>interactive, not a seminar</small></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="1" data-suffix=" day">0 day</span>
+        <span class="stat-label">average response time to enquiries <small>Mon–Fri</small></span>
+      </div>
     </div>
   </div>
 </section>
@@ -131,7 +194,7 @@
   </div>
 </section>
 
-<!-- ============ SERVICES / TRAINING ============ -->
+<!-- ============ SERVICES ============ -->
 <section id="services">
   <div class="wrap">
     <div class="section-head">
@@ -217,7 +280,7 @@
   </div>
 </section>
 
-<!-- ============ CTA BANNER ============ -->
+<!-- ============ CTA ============ -->
 <section class="cta-banner">
   <div class="wrap">
     <h2>Ready to train your team?</h2>
@@ -260,7 +323,7 @@
       </div>
 
       <div class="team-card">
-<img src="../apfaho.jpg.jpeg" alt="Apfaho Madega" class="team-photo">
+        <img src="../apfaho.jpg.jpeg" alt="Apfaho Madega" class="team-photo">
         <h3>Apfaho Madega</h3>
         <p class="role">Communications</p>
         <p>Keeps CipherCore's message clear and human — outreach and client communication.</p>
@@ -349,10 +412,20 @@
           <div class="hours-row"><span>Saturday</span><span>By appointment</span></div>
           <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
         </div>
+
+        <div class="next-steps">
+          <h4>What happens next</h4>
+          <ol>
+            <li>You send us a message about your team.</li>
+            <li>We reply within 1 business day with a suggested format.</li>
+            <li>We book a short call to confirm the details.</li>
+            <li>We deliver the session on-site or online.</li>
+          </ol>
+        </div>
       </div>
 
-<form action="https://formspree.io/f/mdeaywbo" method="POST">
-  <div class="form-row">
+      <form action="https://formspree.io/f/mdeaywbo" method="POST">
+        <div class="form-row">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required>
         </div>
@@ -405,24 +478,19 @@
     </div>
 
     <div class="footer-bottom">
-      <span>© <span id="year"></span> CipherCore Security. All rights reserved.</span>
-      <span>ciphercoresecurity.co.za</span>
+      <span>© <span id="year"></span> CipherCore Security</span>
+      <span class="status">All systems normal</span>
     </div>
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+<!-- Floating status widget -->
+<div class="status-widget" aria-hidden="true">
+  <div class="line"><span class="label">NODE</span><span>CORE-01</span></div>
+  <div class="line"><span class="label">STATUS</span><span class="ok"><span class="live"></span>SECURE</span></div>
+  <div class="line"><span class="label">UPTIME</span><span class="ok">99.9%</span></div>
+</div>
 
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.nav');
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => nav.classList.toggle('menu-open'));
-    nav.querySelectorAll('.nav-links a').forEach(a => {
-      a.addEventListener('click', () => nav.classList.remove('menu-open'));
-    });
-  }
-</script>
-
+<script src="../js/main.js"></script>
 </body>
 </html>
