@@ -19,7 +19,7 @@
     });
   }
 
-  // ---------- Binary rain ----------
+  // ---------- Binary rain (dark hero) ----------
   const canvas = document.getElementById('heroCanvas');
   if (canvas && !reduceMotion) {
     const ctx = canvas.getContext('2d');
@@ -41,19 +41,24 @@
     }
 
     function draw() {
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.06)';
+      // Fade trail on dark navy background
+      ctx.fillStyle = 'rgba(10, 18, 38, 0.10)';
       ctx.fillRect(0, 0, width, height);
-      ctx.fillStyle = '#4EC3F0';
+
+      // Bright cyan rain
+      ctx.fillStyle = '#6ddcff';
       ctx.font = fontSize + 'px ui-monospace, monospace';
+
       for (let i = 0; i < drops.length; i++) {
         const char = chars[Math.floor(Math.random() * chars.length)];
         const x = i * fontSize;
         const y = drops[i];
         ctx.fillText(char, x, y);
+
         if (y > height && Math.random() > 0.975) {
           drops[i] = 0;
         } else {
-          drops[i] += fontSize * 0.6;
+          drops[i] += fontSize * 0.55;
         }
       }
     }
@@ -152,6 +157,6 @@
   }
 
   // ---------- Console easter egg ----------
-  console.log('%c🔒 CipherCore Security', 'color:#2563eb; font-size:14px; font-weight:bold;');
-  console.log('%cCyber awareness training — making security make sense. info@ciphercoresecurity.co.za', 'color:#64748b; font-size:12px;');
+  console.log('%c🔒 CipherCore Security', 'color:#4EC3F0; font-size:14px; font-weight:bold;');
+  console.log('%cCyber awareness training — info@ciphercoresecurity.co.za', 'color:#64748b; font-size:12px;');
 })();
