@@ -141,4 +141,21 @@
           function tick(now) {
             const p = Math.min((now - start) / duration, 1);
             const eased = 1 - Math.pow(1 - p, 3);
-            const value = Math.floor(target *
+            const value = Math.floor(target * eased);
+            el.textContent = value.toLocaleString() + suffix;
+            if (p < 1) requestAnimationFrame(tick);
+            else el.textContent = target.toLocaleString() + suffix;
+          }
+          requestAnimationFrame(tick);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    statNums.forEach(el => observer.observe(el));
+  }
+
+  // ---------- Console easter egg ----------
+  console.log('%c🔒 CipherCore Security', 'color:#4EC3F0; font-size:14px; font-weight:bold;');
+  console.log('%cCyber awareness training — info@ciphercoresecurity.co.za', 'color:#64748b; font-size:12px;');
+})();
