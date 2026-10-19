@@ -196,6 +196,11 @@ p { color: var(--ink-2); }
   color: #fff;
 }
 
+.hero .wrap {
+  position: relative;
+  z-index: 2;
+}
+
 .hero::before {
   content: '';
   position: absolute;
@@ -299,9 +304,8 @@ p { color: var(--ink-2); }
   height: auto;
   display: block;
   margin: 0 auto;
-  border-radius: 16px;
-  filter: drop-shadow(0 20px 60px rgba(78, 195, 240, 0.35));
-  border: 1px solid rgba(78, 195, 240, 0.18);
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* ========== TRUST STRIP ========== */
