@@ -37,18 +37,29 @@ body {
   color: var(--ink);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
 }
 
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 
-.wrap {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 24px;
+/* ========== SITE-WIDE CANVAS ========== */
+.site-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.08; /* Very faint on white backgrounds */
 }
 
-/* ========== HEADER ========== */
+/* ========== SECTIONS with solid backgrounds ========== */
+/* Because the canvas is fixed behind the body, sections need background 
+   colors to cover it where we don't want the rain to show through text. */
+
 .site-header {
   position: sticky;
   top: 0;
@@ -149,7 +160,7 @@ a { color: inherit; text-decoration: none; }
 .btn-secondary:hover { border-color: var(--cyan); color: var(--cyan); }
 
 /* ========== SECTIONS ========== */
-section { padding: 88px 0; position: relative; }
+section { padding: 88px 0; position: relative; z-index: 1; }
 .section-soft { background: var(--bg-soft); }
 .section-line { border-top: 1px solid var(--line); }
 
@@ -175,23 +186,22 @@ h3 { font-size: 1.125rem; font-weight: 600; }
 .section-head p { color: var(--muted); font-size: 17px; }
 p { color: var(--ink-2); }
 
-/* ========== HERO — SOLID DARK NAVY ========== */
+/* ========== HERO (Dark) ========== */
 .hero {
   padding: 110px 0 96px;
-  background: #0a1226;
+  background: var(--navy);
   position: relative;
+  z-index: 1;
   overflow: hidden;
   color: #fff;
 }
 
-.hero-canvas {
+.hero::before {
+  content: '';
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
+  background: rgba(10, 18, 38, 0.75); /* Overlay for the rain */
   z-index: 0;
-  opacity: 0.55;
-  pointer-events: none;
 }
 
 .hero-grid {
@@ -203,9 +213,7 @@ p { color: var(--ink-2); }
   z-index: 2;
 }
 
-.hero .eyebrow {
-  color: var(--cyan);
-}
+.hero .eyebrow { color: var(--cyan); }
 
 .hero h1 {
   color: #ffffff;
@@ -248,20 +256,11 @@ p { color: var(--ink-2); }
   background: rgba(0, 0, 0, 0.4);
 }
 
-.terminal-bar span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
+.terminal-bar span { width: 10px; height: 10px; border-radius: 50%; }
 .terminal-bar span:nth-child(1) { background: #ff5f57; }
 .terminal-bar span:nth-child(2) { background: #febc2e; }
 .terminal-bar span:nth-child(3) { background: #28c840; }
-
-.terminal-title {
-  margin-left: 10px;
-  color: #6f80a5;
-  font-size: 11px;
-}
+.terminal-title { margin-left: 10px; color: #6f80a5; font-size: 11px; }
 
 .terminal-body {
   padding: 16px 18px;
@@ -270,12 +269,7 @@ p { color: var(--ink-2); }
   min-height: 130px;
 }
 
-.terminal-line {
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
+.terminal-line { display: block; white-space: nowrap; overflow: hidden; }
 .terminal-line .prompt { color: var(--cyan); }
 .terminal-line .ok { color: #5FD397; }
 .terminal-line .hl { color: #c8ffd4; }
@@ -289,7 +283,6 @@ p { color: var(--ink-2); }
   animation: termBlink 1s steps(1) infinite;
   margin-left: 2px;
 }
-
 @keyframes termBlink { 50% { opacity: 0; } }
 
 /* Hero visual */
@@ -717,6 +710,8 @@ button[type="submit"]:hover {
   background: var(--navy);
   padding: 56px 0 32px;
   color: #94a3b8;
+  position: relative;
+  z-index: 1;
 }
 
 .footer-grid {
@@ -810,12 +805,12 @@ button[type="submit"]:hover {
 @media (max-width: 600px) {
   section { padding: 64px 0; }
   .hero { padding: 72px 0 64px; }
-  .hero-canvas { opacity: 0.35; }
+  .site-canvas { opacity: 0.05; }
   .card { padding: 24px 22px; }
   .stat-item .stat-num { font-size: 2rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
-  .hero-canvas { display: none; }
+  .site-canvas { display: none; }
 }
