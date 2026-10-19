@@ -19,8 +19,8 @@
     });
   }
 
-  // ---------- Binary rain (dark hero) ----------
-  const canvas = document.getElementById('heroCanvas');
+  // ---------- SITE-WIDE BINARY RAIN ----------
+  const canvas = document.getElementById('siteCanvas');
   if (canvas && !reduceMotion) {
     const ctx = canvas.getContext('2d');
     let width, height, columns, drops;
@@ -28,9 +28,8 @@
     const chars = '01'.split('');
 
     function resize() {
-      const parent = canvas.parentElement;
-      width = parent.offsetWidth;
-      height = parent.offsetHeight;
+      width = window.innerWidth;
+      height = window.innerHeight;
       canvas.width = width * window.devicePixelRatio;
       canvas.height = height * window.devicePixelRatio;
       canvas.style.width = width + 'px';
@@ -41,12 +40,12 @@
     }
 
     function draw() {
-      // Fade trail on dark navy background
-      ctx.fillStyle = 'rgba(10, 18, 38, 0.10)';
+      // Clear with a transparent fade to keep the trail
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
       ctx.fillRect(0, 0, width, height);
 
-      // Bright cyan rain
-      ctx.fillStyle = '#6ddcff';
+      // Draw characters
+      ctx.fillStyle = '#2563eb';
       ctx.font = fontSize + 'px ui-monospace, monospace';
 
       for (let i = 0; i < drops.length; i++) {
@@ -58,7 +57,7 @@
         if (y > height && Math.random() > 0.975) {
           drops[i] = 0;
         } else {
-          drops[i] += fontSize * 0.55;
+          drops[i] += fontSize * 0.5;
         }
       }
     }
@@ -142,21 +141,4 @@
           function tick(now) {
             const p = Math.min((now - start) / duration, 1);
             const eased = 1 - Math.pow(1 - p, 3);
-            const value = Math.floor(target * eased);
-            el.textContent = value.toLocaleString() + suffix;
-            if (p < 1) requestAnimationFrame(tick);
-            else el.textContent = target.toLocaleString() + suffix;
-          }
-          requestAnimationFrame(tick);
-          observer.unobserve(el);
-        }
-      });
-    }, { threshold: 0.4 });
-
-    statNums.forEach(el => observer.observe(el));
-  }
-
-  // ---------- Console easter egg ----------
-  console.log('%c🔒 CipherCore Security', 'color:#4EC3F0; font-size:14px; font-weight:bold;');
-  console.log('%cCyber awareness training — info@ciphercoresecurity.co.za', 'color:#64748b; font-size:12px;');
-})();
+            const value = Math.floor(target *
