@@ -216,6 +216,9 @@ p { color: var(--ink-2); }
   align-items: center;
   position: relative;
   z-index: 2;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 .hero .eyebrow { color: var(--cyan); }
