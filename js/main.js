@@ -45,7 +45,7 @@
       ctx.fillRect(0, 0, width, height);
 
       // Draw characters
-      ctx.fillStyle = '#2563eb';
+ctx.fillStyle = '#4EC3F0'; // Bright Cyan
       ctx.font = fontSize + 'px ui-monospace, monospace';
 
       for (let i = 0; i < drops.length; i++) {
