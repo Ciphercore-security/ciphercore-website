@@ -833,17 +833,26 @@ button[type="submit"]:hover {
 
 .about-visual {
   width: 100%;
-  border-radius: var(--radius);
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border-radius: 50%; /* Makes it a perfect circle */
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* Soft shadow */
-  border: 1px solid var(--line);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); 
+  border: 3px solid var(--brand-soft); /* Gives it a nice ring */
 }
 
 .about-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
   object-fit: cover;
+  animation: spinImage 40s linear infinite; /* Makes it rotate */
+}
+
+@keyframes spinImage {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (max-width: 900px) {
