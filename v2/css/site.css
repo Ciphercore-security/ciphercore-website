@@ -1,5 +1,5 @@
 /* =========================================================
-   CipherCore Security — Stylesheet (Clean Blue + Tech Grid)
+   CipherCore Security — Stylesheet (Cyber Grid + Rain)
    ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
@@ -14,10 +14,10 @@
   --muted-2: #94a3b8;
   --line: #e5e7eb;
   --line-soft: #f1f5f9;
-  --brand: #2563eb; /* CipherCore Blue */
+  --brand: #2563eb;
   --brand-dark: #1d4ed8;
   --brand-soft: #eff6ff;
-  --cyan: #4EC3F0; /* Hero Cyan */
+  --cyan: #4EC3F0;
   --navy: #0a1226;
   --radius: 10px;
   --radius-sm: 6px;
@@ -51,25 +51,30 @@ a { color: inherit; text-decoration: none; }
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.15; /* Subtle texture */
-  mix-blend-mode: multiply; 
+  opacity: 0.35; /* Much more visible now */
 }
 
-/* ========== TECH GRID BACKGROUND ========== */
-/* This adds the subtle dot grid pattern to the white sections */
+/* ========== CYBER GRID BACKGROUND ========== */
 section {
   padding: 88px 0;
   position: relative;
   z-index: 1;
-  background-color: var(--bg);
-  background-image: radial-gradient(var(--line) 1px, transparent 1px);
-  background-size: 24px 24px; /* The size of the grid dots */
+  background-color: transparent; 
+  /* Faint cyber grid lines instead of dots */
+  background-image: 
+    linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Make sure the dark sections have a solid dark background so the grid doesn't show through them */
+.hero, .stats-section, .cta-banner, .site-footer {
+  background-color: var(--navy);
+  background-image: none;
 }
 
 .section-soft {
-  background-color: var(--bg-soft);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  background-color: rgba(248, 250, 252, 0.8); /* Slight tint */
 }
 
 /* ========== HEADER ========== */
@@ -204,12 +209,12 @@ p { color: var(--ink-2); }
 /* ========== HERO (Dark) ========== */
 .hero {
   padding: 110px 0 96px;
-  background: var(--navy);
-  background-image: none; /* Remove grid from dark section */
   position: relative;
   z-index: 1;
   overflow: hidden;
   color: #fff;
+  /* Deep navy gradient */
+  background: linear-gradient(180deg, #0a1226 0%, #0d1830 100%);
 }
 
 .hero-grid {
@@ -280,7 +285,7 @@ p { color: var(--ink-2); }
 .trust-items span::before { content: ""; width: 6px; height: 6px; background: var(--brand); border-radius: 50%; box-shadow: 0 0 8px rgba(37, 99, 235, 0.7); }
 
 /* ========== STATS ========== */
-.stats-section { background: var(--navy); color: #e6ede9; padding: 72px 0; border-top: 1px solid #1e2b45; border-bottom: 1px solid #1e2b45; background-image: none; }
+.stats-section { color: #e6ede9; padding: 72px 0; border-top: 1px solid #1e2b45; border-bottom: 1px solid #1e2b45; }
 .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; text-align: center; }
 .stat-item .stat-num { font-family: 'JetBrains Mono', monospace; font-size: 2.5rem; font-weight: 700; color: var(--cyan); letter-spacing: -0.02em; display: block; margin-bottom: 8px; text-shadow: 0 0 20px rgba(78, 195, 240, 0.4); }
 .stat-item .stat-label { font-size: 13.5px; color: #8fa1c9; line-height: 1.5; }
@@ -320,7 +325,7 @@ p { color: var(--ink-2); }
 .process-step p { color: var(--muted); font-size: 15px; }
 
 /* ========== CTA BANNER ========== */
-.cta-banner { background: var(--navy); color: #fff; padding: 72px 0; border-top: 1px solid #1e2b45; background-image: none; }
+.cta-banner { color: #fff; padding: 72px 0; border-top: 1px solid #1e2b45; }
 .cta-banner .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
 .cta-banner h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2rem); max-width: 24ch; }
 .cta-banner .btn-primary { background: var(--cyan); color: var(--navy); }
@@ -372,7 +377,7 @@ button[type="submit"] { background: var(--brand); color: #fff; border: none; pad
 button[type="submit"]:hover { background: var(--brand-dark); transform: translateY(-1px); }
 
 /* ========== FOOTER ========== */
-.site-footer { border-top: 1px solid #1e2b45; background: var(--navy); padding: 56px 0 32px; color: #94a3b8; position: relative; z-index: 1; background-image: none; }
+.site-footer { border-top: 1px solid #1e2b45; padding: 56px 0 32px; color: #94a3b8; position: relative; z-index: 1; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
 .footer-brand h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
 .footer-brand p { color: #94a3b8; font-size: 14.5px; line-height: 1.7; max-width: 40ch; }
@@ -401,7 +406,7 @@ button[type="submit"]:hover { background: var(--brand-dark); transform: translat
 @media (max-width: 600px) {
   section { padding: 64px 0; background-size: 20px 20px; }
   .hero { padding: 72px 0 64px; }
-  .site-canvas { opacity: 0.1; }
+  .site-canvas { opacity: 0.2; }
   .card { padding: 24px 22px; }
   .stat-item .stat-num { font-size: 2rem; }
 }
