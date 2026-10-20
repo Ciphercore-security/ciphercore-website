@@ -822,3 +822,32 @@ button[type="submit"]:hover {
   * { animation: none !important; transition: none !important; }
   .site-canvas { display: none; }
 }
+
+/* ========== ABOUT VISUAL ========== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Equal columns now */
+  gap: 64px;
+  align-items: center;
+}
+
+.about-visual {
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  border: 1px solid var(--line);
+}
+
+.about-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+}
