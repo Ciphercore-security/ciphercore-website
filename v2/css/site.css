@@ -163,8 +163,7 @@ section {
   padding: 88px 0; 
   position: relative; 
   z-index: 1; 
-  background: rgba(255, 255, 255, 0.85); /* This makes the white sections slightly transparent */
-  backdrop-filter: blur(4px); /* This blurs the rain slightly so it doesn't clash with text */
+  /* Removed the white background so the canvas rain shows through clearly */
 }
 .section-soft { background: var(--bg-soft); }
 .section-line { border-top: 1px solid var(--line); }
