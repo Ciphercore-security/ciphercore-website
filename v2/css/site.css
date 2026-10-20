@@ -55,7 +55,7 @@ a { color: inherit; text-decoration: none; }
   height: 100%;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.08;
+  opacity: 0.15;
 }
 
 /* ========== HEADER ========== */
@@ -159,7 +159,13 @@ a { color: inherit; text-decoration: none; }
 .btn-secondary:hover { border-color: var(--cyan); color: var(--cyan); }
 
 /* ========== SECTIONS ========== */
-section { padding: 88px 0; position: relative; z-index: 1; }
+section { 
+  padding: 88px 0; 
+  position: relative; 
+  z-index: 1; 
+  background: rgba(255, 255, 255, 0.85); /* This makes the white sections slightly transparent */
+  backdrop-filter: blur(4px); /* This blurs the rain slightly so it doesn't clash with text */
+}
 .section-soft { background: var(--bg-soft); }
 .section-line { border-top: 1px solid var(--line); }
 
