@@ -859,6 +859,49 @@ button[type="submit"]:hover {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+/* ========== LET THE RAIN SHOW THROUGH SECTIONS ========== */
+
+/* 1. Make the main sections see-through */
+section {
+  background: transparent !important;
+}
+
+/* 2. But keep the alternating gray sections slightly tinted so they still look distinct */
+.section-soft {
+  background: rgba(247, 248, 250, 0.6) !important;
+}
+
+/* 3. Put a solid white background behind the text blocks so they stand out from the rain */
+.section-head,
+.value-row,
+.process-step,
+.about-grid,
+.team-card,
+.card,
+.pillar {
+  background: #ffffff;
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+/* 4. Fix margins for the new padding */
+.value-row {
+  margin-bottom: 16px;
+  border-top: none;
+  padding: 32px;
+}
+
+.process-step {
+  border-bottom: none;
+  padding: 32px;
+  margin-bottom: 16px;
+}
+
+/* 5. Make the rain slightly darker so it shows up on white */
+.site-canvas {
+  opacity: 0.4 !important;
+  mix-blend-mode: multiply; /* This makes cyan darker on white, but still glows on navy */
+}
 
 @media (max-width: 900px) {
   .about-grid {
