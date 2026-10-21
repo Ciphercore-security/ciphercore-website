@@ -2,12 +2,473 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=/v2/test.html">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CipherCore Security — Cyber Awareness Training</title>
-<link rel="canonical" href="https://ciphercoresecurity.co.za/v2/test.html">
-<meta name="robots" content="index, follow">
+<link rel="icon" type="image/jpeg" href="../logo.jpg.jpeg">
+<meta name="theme-color" content="#0a1226">
+<meta name="description" content="Interactive cybersecurity awareness training for small teams. Phishing simulations, workshops, and refreshers — built for how real people work.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="CipherCore Security — Cyber Awareness Training">
+<meta property="og:description" content="Your staff are your first line of defence. We train them.">
+<meta property="og:url" content="https://ciphercoresecurity.co.za/">
+<meta property="og:image" content="https://ciphercoresecurity.co.za/logo.jpg.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="css/site.css?v=800">
 </head>
 <body>
-<p>Redirecting to <a href="/v2/test.html">CipherCore Security</a>...</p>
+
+<!-- Canvas for rain (outside the hero) -->
+<canvas id="siteCanvas" class="site-canvas" aria-hidden="true"></canvas>
+
+<header class="site-header">
+  <div class="nav">
+    <a href="#" class="brand">
+      <img src="../logo.jpg.jpeg" alt="CipherCore Security logo" class="brand-logo">
+      <span>CipherCore Security</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+    <nav class="nav-links">
+      <a href="#services">Training</a>
+      <a href="#team">Team</a>
+      <a href="#resources">Resources</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="nav-cta">Book a session</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">// Cyber awareness training</span>
+      <h1>Your staff are your first line of defence.</h1>
+      <p class="lede">CipherCore Security delivers practical, interactive cybersecurity awareness training for small teams. Phishing simulations, workshops, and refreshers — built around how your people actually work.</p>
+      <div class="hero-ctas">
+        <a href="#services" class="btn btn-primary">Our training</a>
+        <a href="#contact" class="btn btn-secondary">Book a session</a>
+      </div>
+
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span></span><span></span><span></span>
+          <span class="terminal-title">ciphercore@security — bash</span>
+        </div>
+        <div class="terminal-body"></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <img src="../logo.jpg.jpeg" alt="CipherCore Security" class="hero-logo">
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST STRIP ============ -->
+<section class="trust-strip">
+  <div class="wrap">
+    <div class="trust-items">
+      <span>Interactive, not PowerPoint</span>
+      <span>Plain language, no jargon</span>
+      <span>MWR CyberSec Certified</span>
+      <span>Based in Pretoria</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats-section">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num" data-target="91" data-suffix="%">0%</span>
+        <span class="stat-label">of breaches start with a phishing email <small>industry statistic</small></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="74" data-suffix="%">0%</span>
+        <span class="stat-label">of breaches involve a human element <small>industry statistic</small></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="60" data-suffix=" min">0 min</span>
+        <span class="stat-label">typical session length <small>interactive, not a seminar</small></span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="1" data-suffix=" day">0 day</span>
+        <span class="stat-label">average response time <small>Mon–Fri</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT WE DO (PILLARS) ============ -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">// What we do</span>
+      <h2>We focus on one thing: cyber awareness.</h2>
+      <p>Most breaches start with a person, not a firewall. Our entire service is built around making sure your team catches the attack before they click.</p>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="10" cy="10" r="6.5" stroke="currentColor" stroke-width="2"/>
+            <line x1="15" y1="15" x2="20.5" y2="20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Identify</h3>
+        <p>We show your team exactly what a real phishing email, scam SMS, or fake caller looks like — using live examples, not slides.</p>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Understand</h3>
+        <p>We break down <em>why</em> these attacks work — so your team recognises the pattern next time, not just this exact email.</p>
+      </div>
+
+      <div class="pillar">
+        <div class="pillar-icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L20 6V12C20 16.5 16.5 19.5 12 21C7.5 19.5 4 16.5 4 12V6L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M8.5 12L11 14.5L15.5 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Strengthen</h3>
+        <p>We follow up with refreshers so awareness doesn't fade after the session. Security habits are built over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section-soft section-line">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">// Who we are</span>
+      <p class="about-lead">We're a youth-led team, focused on the gap most companies ignore — the human one.</p>
+      
+      <div class="about-body" style="margin-top: 24px;">
+        <p>CipherCore Security was created by a group of young professionals who saw that most cybersecurity training was boring, generic, and forgotten by the next day.</p>
+        <p>We built something different: an interactive, hands-on approach that shows people what real attacks look like — and gives them the tools to catch them.</p>
+        <p>We focus exclusively on cyber awareness training. It's all we do, and we do it well.</p>
+      </div>
+    </div>
+    
+    <div class="about-visual">
+      <img src="../about-visual.jpg.png" alt="CipherCore Cyber Awareness" class="about-img">
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">// Training services</span>
+      <h2>Four ways we train your team</h2>
+      <p>Short, practical, and built around how your team actually works.</p>
+    </div>
+
+    <div class="value-rows">
+      <div class="value-row">
+        <h3>
+          <span class="row-icon">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3.5 6.5L12 13L20.5 6.5" stroke="currentColor" stroke-width="2"/></svg>
+          </span>
+          Phishing simulations
+        </h3>
+        <p>We send a controlled, safe phishing email to your team — then walk them through exactly what gave it away. This is the fastest way to change behaviour.</p>
+      </div>
+
+      <div class="value-row">
+        <h3>
+          <span class="row-icon">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="8.5" cy="7" r="3" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="8.5" r="2.4" stroke="currentColor" stroke-width="2"/><path d="M2.5 20 C2.5 14.5 6 13 8.5 13 C11 13 14.5 14.5 14.5 20" stroke="currentColor" stroke-width="2"/><path d="M14.5 20 C14.5 16 16.5 14.5 18 14.5 C19.8 14.5 21.5 16 21.5 19.5" stroke="currentColor" stroke-width="2"/></svg>
+          </span>
+          On-site workshops
+        </h3>
+        <p>Interactive sessions on phishing, passwords, safe device use, and social engineering — pitched for non-technical staff.</p>
+      </div>
+
+      <div class="value-row">
+        <h3>
+          <span class="row-icon">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7V12L15.5 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
+          Lunch &amp; learn sessions
+        </h3>
+        <p>30-minute focused briefings on one topic at a time — easy to slot into a busy week. No lengthy seminars.</p>
+      </div>
+
+      <div class="value-row">
+        <h3>
+          <span class="row-icon">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 12C4 7.5 7.5 4 12 4C16.5 4 20 7.5 20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 12V15C20 16.5 19 17.5 17.5 17.5H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="17.5" r="2.5" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="17.5" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+          </span>
+          Refresher check-ins
+        </h3>
+        <p>Quarterly or six-monthly follow-ups so awareness doesn't fade. Awareness is a habit, not a one-time event.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section-soft section-line">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">// How it works</span>
+      <h2>From first call to a safer team</h2>
+    </div>
+
+    <div class="process-list">
+      <div class="process-step">
+        <span class="process-num">01</span>
+        <div>
+          <h3>Short discovery call</h3>
+          <p>We learn about your team, how they use technology, and where the biggest risks are.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="process-num">02</span>
+        <div>
+          <h3>Pick your format</h3>
+          <p>Phishing simulation, workshop, lunch &amp; learn, or a combination. We recommend based on your team.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="process-num">03</span>
+        <div>
+          <h3>We deliver the session</h3>
+          <p>On-site or online. Interactive, pitched at your team's level. Usually 30 to 90 minutes.</p>
+        </div>
+      </div>
+      <div class="process-step">
+        <span class="process-num">04</span>
+        <div>
+          <h3>Follow up &amp; refresh</h3>
+          <p>We check in quarterly or as agreed, so awareness stays sharp.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta-banner">
+  <div class="wrap">
+    <h2>Ready to train your team?</h2>
+    <a href="#contact" class="btn btn-primary">Book a session</a>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section id="team">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">// Team</span>
+      <h2>The people who'll train your team</h2>
+      <p>A youth-led team focused on making cybersecurity awareness actually stick.</p>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="../sphesihle.jpg.jpeg" alt="Sphesihle Ngwenya" class="team-photo">
+        <h3>Sphesihle Ngwenya</h3>
+        <p class="role">CEO · Founder</p>
+        <p>Leads CipherCore's vision and drives the company's cybersecurity awareness initiatives.</p>
+        <a href="https://www.linkedin.com/in/sphesihle-ngwenya-26b19022a" target="_blank" rel="noopener" class="team-link">Connect on LinkedIn →</a>
+      </div>
+
+      <div class="team-card">
+        <img src="../luyanda.jpg.jpeg" alt="Luyanda Nkwanyane" class="team-photo">
+        <h3>Luyanda Nkwanyane</h3>
+        <p class="role">COO · Co-Founder</p>
+        <p>Oversees day-to-day operations, keeping every training engagement on track.</p>
+        <a href="https://www.linkedin.com/in/luyanda-nkwanyane-616710338" target="_blank" rel="noopener" class="team-link">Connect on LinkedIn →</a>
+      </div>
+
+      <div class="team-card">
+        <img src="../tebogo2.jpg.png" alt="Tebogo Nkosi" class="team-photo">
+        <h3>Tebogo Nkosi</h3>
+        <p class="role">CTO · Co-Founder</p>
+        <p>Leads the technical direction behind our training tools and simulations.</p>
+        <a href="https://www.linkedin.com/in/tebogo-gift-nkosi-366661370" target="_blank" rel="noopener" class="team-link">Connect on LinkedIn →</a>
+      </div>
+
+      <div class="team-card">
+        <img src="../apfaho.jpg.jpeg" alt="Apfaho Madega" class="team-photo">
+        <h3>Apfaho Madega</h3>
+        <p class="role">Communications</p>
+        <p>Keeps CipherCore's message clear and human — outreach and client communication.</p>
+        <a href="https://www.linkedin.com/in/apfaho-madega-75aa89426" target="_blank" rel="noopener" class="team-link">Connect on LinkedIn →</a>
+      </div>
+
+      <div class="team-card">
+        <img src="../annah.jpg.jpeg" alt="Annah Kaphiri" class="team-photo">
+        <h3>Annah Kaphiri</h3>
+        <p class="role">CMO</p>
+        <p>Shapes how CipherCore shows up to the world — brand, positioning, and market presence.</p>
+        <a href="https://www.linkedin.com/in/annah-selaelo-636b09343" target="_blank" rel="noopener" class="team-link">Connect on LinkedIn →</a>
+      </div>
+
+      <div class="team-card">
+        <img src="../liyabona.jpg.jpeg" alt="Liyabona Meyeliseli" class="team-photo">
+        <h3>Liyabona Meyeliseli</h3>
+        <p class="role">Full-Stack Developer</p>
+        <p>Builds and maintains the software behind our training demos and internal tools.</p>
+        <a href="https://www.linkedin.com/in/liyabona-meyeliseli" target="_blank" rel="noopener" class="team-link">Connect on LinkedIn →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESOURCES ============ -->
+<section id="resources" class="section-soft section-line">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">// Resources</span>
+      <h2>Guides and tips you can use today</h2>
+      <p>Free, practical material — no booking required.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3>Password hygiene</h3>
+        <p>Use a unique password per account, a password manager to store them, and MFA everywhere it's offered — especially email and banking.</p>
+      </div>
+      <div class="card">
+        <h3>Spotting a phishing email</h3>
+        <p>Check the sender's actual address, not just the display name. Be wary of urgency and links that don't match the claimed sender.</p>
+      </div>
+      <div class="card">
+        <h3>Home &amp; office Wi-Fi basics</h3>
+        <p>Change default router passwords, use WPA3 or WPA2 encryption, and keep a separate network for guests and IoT devices.</p>
+      </div>
+      <div class="card">
+        <h3>If you think you've been breached</h3>
+        <p>Disconnect the affected device, change passwords from a separate device, and contact your IT or security provider immediately.</p>
+      </div>
+      <div class="card">
+        <h3>Backups that actually work</h3>
+        <p>Follow the 3-2-1 rule: three copies of your data, on two different storage types, with one kept offsite or offline.</p>
+      </div>
+      <div class="card">
+        <h3>Social engineering red flags</h3>
+        <p>Be cautious of unexpected urgency, requests to bypass normal process, and callers asking to "verify" information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">// Contact</span>
+      <h2>Book a training session</h2>
+      <p>Tell us a bit about your team and what you'd like to cover. We'll come back with a plan — no pressure, no jargon.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="item">
+          <span class="label">Email</span>
+          <a href="mailto:info@ciphercoresecurity.co.za">info@ciphercoresecurity.co.za</a>
+        </div>
+        <div class="item">
+          <span class="label">Based in</span>
+          <span>Pretoria, Gauteng</span>
+        </div>
+
+        <div class="hours">
+          <div class="hours-row"><span>Monday – Friday</span><span>08:00 – 17:00</span></div>
+          <div class="hours-row"><span>Saturday</span><span>By appointment</span></div>
+          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+        </div>
+
+        <div class="next-steps">
+          <h4>What happens next</h4>
+          <ol>
+            <li>You send us a message about your team.</li>
+            <li>We reply within 1 business day with a suggested format.</li>
+            <li>We book a short call to confirm the details.</li>
+            <li>We deliver the session on-site or online.</li>
+          </ol>
+        </div>
+      </div>
+
+      <form action="https://formspree.io/f/mdeaywbo" method="POST">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="service">What are you interested in?</label>
+          <select id="service" name="service">
+            <option>Phishing simulation</option>
+            <option>On-site workshop</option>
+            <option>Lunch &amp; learn session</option>
+            <option>Full awareness programme</option>
+            <option>Not sure yet — let's talk</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="message">Tell us more</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>CipherCore Security</h4>
+        <p>Cyber awareness training for small teams. We make cybersecurity make sense — and make it stick.</p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Site</h5>
+        <a href="#services">Training</a>
+        <a href="#team">Team</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <a href="mailto:info@ciphercoresecurity.co.za">info@ciphercoresecurity.co.za</a>
+        <span>Pretoria, Gauteng</span>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> CipherCore Security</span>
+      <span class="status">All systems normal</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
 </body>
 </html>
