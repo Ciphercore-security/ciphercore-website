@@ -369,25 +369,24 @@
   </div>
 </footer>
 
+  <!-- Mobile Menu Toggle -->
   <script>
-    const menuBtn = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.main-nav');
-    
-    if (menuBtn && navMenu) {
-        menuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', () => {
+        nav.classList.toggle('menu-open');
+      });
     }
 
-  const navToggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.nav');
-
-  if (navToggle && nav) {
-    navToggle.addEventListener('click', () => {
-      nav.classList.toggle('menu-open');
-    });
-  }
-</script>
+    // Dynamic Year for Footer
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  </script>
+  
 <script src="js/main.js"></script>
 </body>
 </html>
