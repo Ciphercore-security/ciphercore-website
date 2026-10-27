@@ -585,3 +585,150 @@ button[type="submit"]:hover { background: var(--brand-dark); transform: translat
     justify-content: center;
     align-items: center;
 }
+
+/* =========================================
+   1. GLOBAL OVERFLOW FIX
+   ========================================= */
+*, *::before, *::after {
+    box-sizing: border-box; /* Forces padding to stay inside the width */
+}
+
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden; /* Stops the sideways scrolling */
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure all images, canvases, and videos shrink */
+img, canvas, video, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =========================================
+   2. RESPONSIVE HEADER
+   ========================================= */
+.site-header {
+    width: 100%;
+    padding: 1rem;
+    background-color: #0B132B; /* Match your dark blue */
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* KEY FIX: Lets items drop to a new line if they don't fit */
+    gap: 1rem;
+}
+
+/* On mobile, make the button smaller so it fits next to the menu */
+@media (max-width: 768px) {
+    .header-inner .btn-book {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+    .logo-text {
+        font-size: 1.1rem; /* Make text slightly smaller */
+    }
+}
+
+/* =========================================
+   3. TRUST STRIP
+   ========================================= */
+.trust-strip {
+    display: flex;
+    flex-wrap: wrap; /* Allows them to wrap to a new line */
+    justify-content: center; /* Centers them */
+    gap: 1rem; /* Adds space between them */
+    padding: 1.5rem 1rem;
+}
+
+.trust-strip-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    white-space: nowrap; /* Prevents the text inside a single bullet from breaking */
+}
+
+/* =========================================
+   4. STATS SECTION
+   ========================================= */
+.stats-section {
+    width: 100%;
+    padding: 3rem 1rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    gap: 2rem;
+    text-align: center;
+}
+
+/* On desktop, switch to 4 columns */
+@media (min-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* =========================================
+   5. HERO SECTION
+   ========================================= */
+.hero {
+    width: 100%;
+    padding: 3rem 1rem; /* Add padding so text doesn't touch the edges */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* The terminal graphic container */
+.terminal-graphic {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto; /* Allows the terminal to scroll internally if the code is too long, instead of breaking the whole page */
+}
+
+/* Buttons in Hero */
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.hero-buttons .btn {
+    width: 100%; /* Full width on mobile */
+    text-align: center;
+}
+
+/* Desktop overrides */
+@media (min-width: 768px) {
+    .hero {
+        flex-direction: row;
+        align-items: center;
+        padding: 5rem 2rem;
+    }
+    .hero-buttons {
+        flex-direction: row;
+        width: auto;
+    }
+    .hero-buttons .btn {
+        width: auto;
+    }
+}
+
+/* =========================================
+   6. FEATURE CARDS / GRIDS
+   ========================================= */
+.features-grid {
+    display: grid;
+    /* Automatically makes 1 column on phone, 2 on tablet, 3 on PC */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
